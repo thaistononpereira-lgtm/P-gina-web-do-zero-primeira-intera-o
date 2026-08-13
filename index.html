@@ -9,7 +9,7 @@
     <style>
         header{
             background-color:#E6ACDC;
-            color: aliceblue;
+            color: rgb(255, 255, 255);
             text-align: center;
             max-width: 800px;
             margin: 0 auto;
@@ -17,17 +17,21 @@
             border: 5px solid aliceblue;
         }
         main {
-            background-color: aliceblue;
+            background-color: rgb(253, 195, 253);
             color: #E6ACDC;
             text-align: center;
             max-width: 800px;
             margin: 0 auto;
             padding: 16px;
+            display: flex;
 
         }
         img{
             width: 80px;
             height: 80px;
+        }
+       .artigo-autor{
+            font-weight: bold;
         }
 
     </style>
@@ -44,12 +48,28 @@
         Decoração em tom rosa bebê com livros, velas aromáticas e maquiagens.
         
         Acessórios de skincare, pincéis, óculos de sol e joias sobre a bancada.">
-        
-        <h2>Meu primeiro post</h2>
-        <p>Por: Thais Tonon</p>
-        <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de autocuidado que toda garota precisa saber.</p>
+        <div>
+
+            <h2>Meu primeiro post</h2>
+            </p class="artigo-autor">Por: Thais Tonon</p>
+            <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de autocuidado que toda garota precisa saber.</p>
+             <button>💖 <span>0</span>​</button>
+        </div>
+
         <main>
             <body>
         
     </body>
+    <script>
+        const button = document.querySelector("button");
+        button.addEventListener("clik", buttonClicado);
+
+function buttonClicado(){
+    console.log("fui clicado");
+    let texto = button.querySelector("span");
+    texto.textContent++;
+}
+
+
+    </script>
 </html>
