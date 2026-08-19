@@ -54,19 +54,26 @@
             </p class="artigo-autor">Por: Thais Tonon</p>
             <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de autocuidado que toda garota precisa saber.</p>
              <button>💖 <span>0</span>​</button>
+             <button>👍​ <span>0</span>​</button>
         </div>
 
-        <main>
-            <body>
-        
+
+        </main>
     </body>
     <script>
-        const button = document.querySelector("button");
+        const buttons = document.querySelectorAll("button");
+
+        buttons.forEach( function(button){
+            
+        }
+             
+        )
         button.addEventListener("clik", buttonClicado);
 
 function buttonClicado(){
     console.log("fui clicado");
-    let texto = button.querySelector("span");
+    let texto = button.querySelector
+    ("span");
     texto.textContent++;
 }
 
