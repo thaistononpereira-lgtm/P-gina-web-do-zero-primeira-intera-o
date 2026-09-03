@@ -1,92 +1,115 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Blog</title>
     <style>
-        header{
-            background-color:#E6ACDC;
-            color: rgb(255, 255, 255);
+        header {
+            background-color: #FBECF6;
+            color: #8F7814;
             text-align: center;
-            max-width: 800px;
+            max-width: 830px;
             margin: 0 auto;
-            border: 5px solid aliceblue;
+            border: 4px solid #8F7814;
             padding: 16px;
         }
-        main {
-            background-color: rgb(253, 195, 253);
-            color: #E6ACDC;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 16px;
-            
-        }
-        article{
-            display: flex;
 
+        main {
+            background-color: #fdf9d1;
+            color: #8F7814;
+            max-width: 800px;
+            margin: 20px auto;
+            border: 2px solid #8F7814;
+            padding: 16px;
         }
-        img{
+
+        article {
+            display: flex;
+            gap: 16px;
+            text-align: left;
+            margin-bottom: 24px;
+        }
+
+        img {
             width: 80px;
             height: 80px;
+            object-fit: cover;
         }
-       .artigo-autor{
+
+        .artigo-autor {
             font-weight: bold;
         }
 
-    </style>
-    <head>
-
-        <body>
-            <header>
-                <h1>Blog.Da.Thais</h1>
-                <p>Perfil voltado para garotas que buscam sua melhor versão</p>
-            </header>
-            <article>
-            <img src="imagem blog.png"
-             alt="Penteadeira off-white com espelho circular de LED.">            
-        <div>
-
-        <h2> Meu Primeiro Post!</h2>
-        <p>class</p>
-
-            Inscrição "Blog da Thai" em batom rosa no vidro com marcas de beijos.
-            
-            Decoração em tom rosa bebê com livros, velas aromáticas e maquiagens.
-            
-            Acessórios de skincare, pincéis, óculos de sol e joias sobre a bancada.">
-            <div>
-                
-                <h2>Meu primeiro post</h2>
-            </p class="artigo-autor">Por: Thais Tonon</p>
-            <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de autocuidado que toda garota precisa saber.</p>
-            <button>💖 <span>0</span>​</button>
-            <button>👍​ <span>0</span>​</button>
-        </div>
-    </article>
-
-
-        </main>
-    </body>
-    <script>
-        const buttons = document.querySelectorAll("button");
-
-        
-        buttons.forEach( function(button){
-            button.addEventListener("clik", buttonClicado);
-            
-        function buttonClicado(){
-            console.log("fui clicado");
-            let texto = button.querySelector
-            ("span");
-            texto.textContent++;
-            
+        button {
+            cursor: pointer;
         }
-    })
-        
+    </style>
+</head>
 
+<body>
+    <header>
+        <h1>Blog.Da.Thai</h1>
+        <p>Perfil voltado para garotas que buscam ser sua melhor versão</p>
+    </header>
 
+    <main>
+        <article>
+            <img src="blog.png"
+                alt="Ilustração de penteadeira rosa com a frase "Blog da Thai" escrita no espelho iluminado.">
+            <div>
+                <h2>Meu Primeiro Post</h2>
+                <p class="artigo-autor">Por: Thais Tonon</p>
+                <p>Oi, meninas! Sejam muito bem-vindas ao nosso Blog conforto!
+                    Aqui é o lugar perfeito para
+                    compartilhar ideias, ficar por dentro das novidades,
+                    se inspirar e, claro, colocar você em primeiro lugar!</p>
+                <button>❤️ <span>0</span></button>
+                <button>💬 <span>0</span></button>
+                <button>🔁 <span>0</span></button>
+            </div>
+        </article>
+
+        <article>
+            <img src="blog.img"
+                alt="">
+            <div>
+                <h2>Meu Segundo Post</h2>
+                <p class="artigo-autor">Por: Thais Tonon</p>
+                <p>Oiii migas! Fiquem atentas, pois, no próximo post vocês vão encontrar
+                    novidades do mundo da beleza, indicações de produtos e explicações 
+                    MARAVILHOSAS! Tudo isso e muito mais aqui no seu blog favorito, feito
+                    sempre com amor, pensando em seu bem estar e conforto.
+                    !</p>
+                <button>❤️ <span>0</span></button>
+                <button>💬 <span>0</span></button>
+                <button>🔁 <span>0</span></button>
+            </div>
+        </article>
+    </main>
+
+    <script>
+        const botoes = document.querySelectorAll("button");
+
+        botoes.forEach(function (botao) {
+            let curtiu = false;
+
+            botao.addEventListener("click", function () {
+                let texto = botao.querySelector("span");
+                let quantidade = parseInt(texto.textContent);
+
+                if (!curtiu) {
+                    texto.textContent = quantidade + 1;
+                    curtiu = true;
+                } else {
+                    texto.textContent = quantidade - 1;
+                    curtiu = false;
+                }
+            });
+        });
     </script>
+</body>
+
 </html>
