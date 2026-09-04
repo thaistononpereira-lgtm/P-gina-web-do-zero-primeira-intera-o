@@ -18,7 +18,7 @@
         }
 
         main {
-            background-color: #fdf9d1;
+            background-color: #f6d0fd;
             color: #8F7814;
             max-width: 800px;
             margin: 20px auto;
@@ -73,8 +73,8 @@
         </article>
 
         <article>
-            <img src="blog.img"
-                alt="">
+            <img src="img2.png"
+                alt="Gatinha branca fofa usando um laço rosa com a frase Autocuidado para as Gatas, rodeada por corações e mensagens positivas.">
             <div>
                 <h2>Meu Segundo Post</h2>
                 <p class="artigo-autor">Por: Thais Tonon</p>
@@ -93,23 +93,20 @@
     <script>
         const botoes = document.querySelectorAll("button");
 
-        botoes.forEach(function (botao) {
-            let curtiu = false;
+        botoes.forEach( function (botao){
+     botao.addEventListener("click,botaoClicado");
 
-            botao.addEventListener("click", function () {
-                let texto = botao.querySelector("span");
-                let quantidade = parseInt(texto.textContent);
+     function botaoClicado() {
+        console.log("fui clicado");
+        let texto = botao.querySelector ("span");
+        texto.textContent++;
+     }
+    })
 
-                if (!curtiu) {
-                    texto.textContent = quantidade + 1;
-                    curtiu = true;
-                } else {
-                    texto.textContent = quantidade - 1;
-                    curtiu = false;
-                }
-            });
-        });
-    </script>
+
+</script>
 </body>
-
 </html>
+            
+
+            
