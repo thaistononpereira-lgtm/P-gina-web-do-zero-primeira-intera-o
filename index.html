@@ -45,6 +45,11 @@
 
         button {
             cursor: pointer;
+            background-color: #ffffff;
+            border: 1px solid #8F7814;
+            border-radius: 4px;
+            padding: 4px 8px;
+            margin-right: 4px;
         }
     </style>
 </head>
@@ -57,8 +62,8 @@
 
     <main>
         <article>
-            <img src="blog.png"
-                alt="Ilustração de penteadeira rosa com a frase "Blog da Thai" escrita no espelho iluminado.">
+            <img src="imagem blog.png"
+                alt="Ilustração de penteadeira rosa com a frase 'Blog da Thai' escrita no espelho iluminado.">
             <div>
                 <h2>Meu Primeiro Post</h2>
                 <p class="artigo-autor">Por: Thais Tonon</p>
@@ -81,8 +86,7 @@
                 <p>Oiii migas! Fiquem atentas, pois, no próximo post vocês vão encontrar
                     novidades do mundo da beleza, indicações de produtos e explicações 
                     MARAVILHOSAS! Tudo isso e muito mais aqui no seu blog favorito, feito
-                    sempre com amor, pensando em seu bem estar e conforto.
-                    !</p>
+                    sempre com amor, pensando em seu bem estar e conforto!</p>
                 <button>❤️ <span>0</span></button>
                 <button>💬 <span>0</span></button>
                 <button>🔁 <span>0</span></button>
@@ -93,20 +97,22 @@
     <script>
         const botoes = document.querySelectorAll("button");
 
-        botoes.forEach( function (botao){
-     botao.addEventListener("click,botaoClicado");
+        botoes.forEach(function (botao) {
+            let curtiu = false;
 
-     function botaoClicado() {
-        console.log("fui clicado");
-        let texto = botao.querySelector ("span");
-        texto.textContent++;
-     }
-    })
-
-
-</script>
+            botao.addEventListener("click", function () {
+                let texto = botao.querySelector("span");
+                
+                if (curtiu === false) {
+                    texto.textContent = Number(texto.textContent) + 1;
+                    curtiu = true;
+                } else {
+                    texto.textContent = Number(texto.textContent) - 1;
+                    curtiu = false;
+                }
+            });
+        });
+    </script>
 </body>
-</html>
-            
 
-            
+</html>
