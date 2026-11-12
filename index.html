@@ -2,72 +2,201 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog</title>
+<style>
+:root{
+--cor-primaria: #f3bcf5;
+--cor-secundaria: #cd37d2;
+--cor-fundo: #ffffff;
+--cor-texto: #e446cf;
+--cor-constraste: #fcffcd;
+--cor-botao: #e59bd3;
+}
+
+body {
+max-width: 100vw;
+}
+
+header {
+background-color: #f3caf0;
+color: #ee5cc2;
+text-align: center;
+margin: 0 auto;
+padding: 16px;
+
+}
+
+main {
+background-color: #FFFFFF;
+color: #de74e2;
+margin: 0 auto;
+padding: 16px;
+
+display: flex;
+flex-wrap: wrap;
+}
+article{
+display: flex;
+
+border: 1px solid #d83faa;
+margin: 16px;
+gap: 16px;
+padding: 16px;
+
+flex: 1 1 30%;
+}
+img {
+width: 80px;
+height: 80px;
+}
+
+.artigo-autor {
+font-weight: bold;
+}
+</style>
+
 </head>
 
 <body>
-    <header>
-        <h1>Blog.Da.Thai</h1>
-        <p>Perfil voltado para garotas que buscam ser sua melhor versão</p>
-    </header>
+<header>
+<h1><Blog class="da thai"></Blog></h1>
+<p>Aqui será seu lugar de conforto, com vários assuntos do universo feminino</p>
+</header>
+<main>
+<article>
+<img src='imagem blog.png' alt="Ícone com imagem de penteadeira com escrita blog.da.thai">
+<div>
+<h2>Meu primeiro post</h2>
+<p class="artigo-autor"> Por: Thais</p>
+<p>Boas-vindas ao meu novo blog! Aqui vou
+compartilhar dicas de autocuidado e conhecimentos do mundo feminino</p>
 
-    <main>
-        <article>
-            <img src="imagem blog.png"
-                alt="Ilustração de penteadeira rosa com a frase 'Blog da Thai' escrita no espelho iluminado.">
-            <div>
-                <h2>Meu Primeiro Post</h2>
-                <p class="artigo-autor">Por: Thais Tonon</p>
-                <p>Oi, meninas! Sejam muito bem-vindas ao nosso Blog conforto!
-                    Aqui é o lugar perfeito para
-                    compartilhar ideias, ficar por dentro das novidades,
-                    se inspirar e, claro, colocar você em primeiro lugar!</p>
-                <button>❤️ <span>0</span></button>
-                <button>💬 <span>0</span></button>
-                <button>🔁 <span>0</span></button>
-            </div>
-        </article>
+<button>❤️ <span>0</span></button>
+<button>👍 <span>0</span></button>
+</div>
+</article>
+<article>
+<img src="img3.jpeg" alt="Ícone com a imagem de uma gatinha branca com acessórios rosa">
+<div>
+<h2>Pele impecável</h2>
+<p class="artigo-autor"> Por: Thais</p>
+<p>Para uma pele saudável, água e alimentação balanceada é essencial,
+    porem, invista em bons produtos para sua skincare diaria.
+</p>
 
-        <article>
-            <img src="img2.png"
-                alt="Gatinha branca fofa usando um laço rosa com a frase Autocuidado para as Gatas, rodeada por corações e mensagens positivas.">
-            <div>
-                <h2>Meu Segundo Post</h2>
-                <p class="artigo-autor">Por: Thais Tonon</p>
-                <p>Oiii migas! Fiquem atentas, pois, no próximo post vocês vão encontrar
-                    novidades do mundo da beleza, indicações de produtos e explicações 
-                    MARAVILHOSAS! Tudo isso e muito mais aqui no seu blog favorito, feito
-                    sempre com amor, pensando em seu bem estar e conforto!</p>
-                <button>❤️ <span>0</span></button>
-                <button>💬 <span>0</span></button>
-                <button>🔁 <span>0</span></button>
-            </div>
-        </article>
-    </main>
+<p class="artigo-fonte">Fonte:Google</p>
 
-    <script>
-        const botoes = document.querySelectorAll("button");
+<button>❤️ <span>0</span></button>
+<button>👍 <span>0</span></button>
+</div>
+</article>
+<article>
+<img src="tec.money" alt="Ícone quadrado para blog de tecnologia e educação.
+No centro, um livro aberto com circuitos digitais integrados
+e uma lâmpada acesa saindo do meio.
+Dentro da lâmpada, há um capelo de formatura e conexões de rede.
+Fundo em gradiente azul e verde.">
+<div>
+<h2>teclado antigo</h2>
+<p class="artigo-autor"> Por: victor</p>
+<p>Os teclados antigos, conhecidos pelo visual retrô e pela durabilidade, despertam o interesse de colecionadores e de quem busca uma digitação mais confortável. Seja para restaurar um clássico real ou usar um modelo moderno com estilo vintage, o mercado oferece opções fascinantes.</p>
 
-        botoes.forEach(function (botao) {
-            let curtiu = false;
+<p class="artigo-fonte">Fonte:Google</p>
 
-            botao.addEventListener("click", function () {
-                let texto = botao.querySelector("span");
-                
-                if (curtiu === false) {
-                    texto.textContent = Number(texto.textContent) + 1;
-                    curtiu = true;
-                } else {
-                    texto.textContent = Number(texto.textContent) - 1;
-                    curtiu = false;
-                }
-            });
-        });
-    </script>
+<button>❤️ <span>0</span></button>
+<button>👍 <span>0</span></button>
+</div>
+</article>
+<article>
+<img src="tec.png" alt="Ícone quadrado para blog de tecnologia e educação.
+No centro, um livro aberto com circuitos digitais integrados
+e uma lâmpada acesa saindo do meio.
+Dentro da lâmpada, há um capelo de formatura e conexões de rede.
+Fundo em gradiente azul e verde.">
+<div>
+<h2>Monitor antigo</h2>
+<p class="artigo-autor"> Por: victor</p>
+<p>Os monitores antigos, marcados pela era das telas pesadas e volumosas, ganharam um status nostálgico e hoje são itens desejados por colecionadores de retrocomputing, entusiastas de jogos antigos (retrogaming) e estúdios de design.</p>
+
+<p class="artigo-fonte">Fonte:Google</p>
+
+<button>❤️ <span>0</span></button>
+<button>👍 <span>0</span></button>
+</div>
+</article>
+<article>
+<img src="tec.joy" alt="Ícone quadrado para blog de tecnologia e educação.
+No centro, um livro aberto com circuitos digitais integrados
+e uma lâmpada acesa saindo do meio.
+Dentro da lâmpada, há um capelo de formatura e conexões de rede.
+Fundo em gradiente azul e verde.">
+<div>
+<h2>gabinete antigo</h2>
+<p class="artigo-autor"> Por: victor</p>
+<p>Os gabinetes de computador antigos, especialmente os modelos das décadas de 1980 e 1990, tornaram-se itens raros e valiosos no movimento de retrocomputing. Conhecidos pelo visual robusto, chapas de metal grossas e a icônica cor bege, eles representam a era de ouro da computação pessoal.</p>
+
+<p class="artigo-fonte">Fonte:Google</p>
+
+<button>❤️ <span>0</span></button>
+<button>👍 <span>0</span></button>
+</div>
+</article>
+<article>
+<img src="vec.mey" alt="Ícone quadrado para blog de tecnologia e educação.
+No centro, um livro aberto com circuitos digitais integrados
+e uma lâmpada acesa saindo do meio.
+Dentro da lâmpada, há um capelo de formatura e conexões de rede.
+Fundo em gradiente azul e verde.">
+<div>
+<h2>Camera antiga</h2>
+<p class="artigo-autor"> Por: victor</p>
+<p>As câmeras antigas carregam o charme da fotografia analógica e mecânica, atraindo tanto colecionadores quanto jovens interessados na estética granulada e nas cores únicas dos filmes fotográficos. O universo das câmeras vintage abrange desde modelos centenários até as primeiras digitais dos anos 2000.</p>
+
+<p class="artigo-fonte">Fonte:Google</p>
+
+<button>❤️ <span>0</span></button>
+<button>👍 <span>0</span></button>
+</div>
+</article>
+<article>
+<img src="tec.money" alt="Ícone quadrado para blog de tecnologia e educação.
+No centro, um livro aberto com circuitos digitais integrados
+e uma lâmpada acesa saindo do meio.
+Dentro da lâmpada, há um capelo de formatura e conexões de rede.
+Fundo em gradiente azul e verde.">
+<div>
+<h2>placa mãe antiga</h2>
+<p class="artigo-autor"> Por: victor</p>
+<p>As placas-mãe antigas são a espinha dorsal do retrocomputing. Elas carregam a evolução da arquitetura dos computadores e são essenciais para quem deseja reviver a experiência exata de sistemas operacionais como o MS-DOS, Windows 95 ou Windows XP.</p>
+
+<p class="artigo-fonte">Fonte:Google</p>
+<button>❤️ <span>0</span></button>
+<button>👍 <span>0</span></button>
+</div>
+</article>
+</main>
 </body>
+<script>
+const botoes = document.querySelectorAll("button");
+
+botoes.forEach(function (botao) {
+let curtiu = false;
+botao.addEventListener("click", botaoclicado);
+function botaoclicado() {
+console.log("fui clicado");
+let texto = botao.querySelector("span");
+if (curtiu === false){
+texto.textContent++;
+curtiu = true;
+}else{
+texto.textContent--;
+curtiu = false;
+}
+}
+})
+
+</script>
 
 </html>
