@@ -2,190 +2,263 @@
 <html lang="pt-br">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blog</title>
-<style>
-:root{
---cor-primaria: #f3bcf5;
---cor-secundaria: #cd37d2;
---cor-fundo: #ffffff;
---cor-texto: #e446cf;
---cor-constraste: #fcffcd;
---cor-botao: #e59bd3;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog</title>
+  <style>
+    :root {
+      --cor-primaria: #f3bcf5;
+      --cor-secundaria: #cd37d2;
+      --cor-fundo: #ffffff;
+      --cor-texto: #e446cf;
+      --cor-constraste: #fcffcd;
+      --cor-botao: #e59bd3;
+    }
 
-body {
-max-width: 100vw;
-}
+    body {
+      max-width: 100vw;
+      background-color: var(--cor-fundo);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
 
-header {
-background-color: #f3caf0;
-color: #ee5cc2;
-text-align: center;
-margin: 0 auto;
-padding: 16px;
+    /* Estilos gerais para o modo escuro */
+    body.dark-mode {
+      background-color: #1f261d;
+    }
 
-}
+    body.dark-mode header {
+      background-color: #2a3327;
+      color: #f3caf0;
+    }
 
-main {
-background-color: #FFFFFF;
-color: #de74e2;
-margin: 0 auto;
-padding: 16px;
+    body.dark-mode main {
+      background-color: #1f261d;
+      color: #e59bd3;
+    }
 
-display: flex;
-flex-wrap: wrap;
-}
-article{
-display: flex;
+    body.dark-mode article {
+      border-color: #8da383;
+    }
 
-border: 1px solid #d83faa;
-margin: 16px;
-gap: 16px;
-padding: 16px;
+    header {
+      background-color: #f3caf0;
+      color: #ee5cc2;
+      text-align: center;
+      margin: 0 auto;
+      padding: 16px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
 
-flex: 1 1 30%;
-}
-img {
-width: 80px;
-height: 80px;
-}
+    main {
+      background-color: #FFFFFF;
+      color: #de74e2;
+      margin: 0 auto;
+      padding: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
 
-.artigo-autor {
-font-weight: bold;
-}
-</style>
+    article {
+      display: flex;
+      border: 1px solid #d83faa;
+      margin: 16px;
+      gap: 16px;
+      padding: 16px;
+      flex: 1 1 30%;
+      transition: border-color 0.3s ease;
+    }
 
+    img {
+      width: 80px;
+      height: 80px;
+    }
+
+    .artigo-autor {
+      font-weight: bold;
+    }
+
+    /* Botão circular fixo de alternância de tema */
+    #theme-toggle {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background-color: #ffffff;
+      border: 2px solid #526649;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      padding: 0;
+      z-index: 1000;
+      transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+    }
+
+    #theme-toggle:hover {
+      transform: scale(1.05);
+    }
+
+    /* Círculo interno dividido verticalmente */
+    #theme-toggle .theme-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: linear-gradient(90deg, #394733 50%, #ffffff 50%);
+      border: 1px solid #526649;
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+
+    /* Estilos do botão no modo escuro */
+    body.dark-mode #theme-toggle {
+      background-color: #1f261d;
+      border-color: #8da383;
+    }
+
+    body.dark-mode #theme-toggle .theme-icon {
+      background: linear-gradient(90deg, #ffffff 50%, #394733 50%);
+      border-color: #8da383;
+    }
+  </style>
 </head>
 
 <body>
-<header>
-<h1><Blog class="da thai"></Blog></h1>
-<p>Aqui será seu lugar de conforto, com vários assuntos do universo feminino</p>
-</header>
-<main>
-<article>
-<img src='imagem blog.png' alt="Ícone com imagem de penteadeira com escrita blog.da.thai">
-<div>
-<h2>Meu primeiro post</h2>
-<p class="artigo-autor"> Por: Thais</p>
-<p>Boas-vindas ao meu novo blog! Aqui vou
-compartilhar dicas de autocuidado e conhecimentos do mundo feminino</p>
+  <header>
+    <h1>Blog da Thai</h1>
+    <p>Aqui será seu lugar de conforto, com vários assuntos do universo feminino</p>
+  </header>
+  <main>
+    <article>
+      <img src='imagem blog.png' alt="Ícone com imagem de penteadeira com escrita blog.da.thai">
+      <div>
+        <h2>Meu primeiro post</h2>
+        <p class="artigo-autor"> Por: Thais</p>
+        <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de autocuidado e conhecimentos do mundo feminino</p>
 
-<button>❤️ <span>0</span></button>
-<button>👍 <span>0</span></button>
-</div>
-</article>
-<article>
-<img src="img3.jpeg" alt="Ícone com a imagem de uma gatinha branca com acessórios rosa">
-<div>
-<h2>Pele impecável</h2>
-<p class="artigo-autor"> Por: Thais</p>
-<p>Para uma pele saudável, água e alimentação balanceada é essencial,
-    porem, invista em bons produtos para sua skincare diaria.
-</p>
+        <button class="btn-reacao">❤️ <span>0</span></button>
+        <button class="btn-reacao">👍 <span>0</span></button>
+      </div>
+    </article>
+    <article>
+      <img src="img3.jpeg" alt="Ícone com a imagem de uma gatinha branca com acessórios rosa">
+      <div>
+        <h2>Pele impecável</h2>
+        <p class="artigo-autor"> Por: Thais</p>
+        <p>Para uma pele saudável, água e alimentação balanceada é essencial, porem, invista em bons produtos para sua skincare diaria.</p>
 
-<p class="artigo-fonte">Fonte:Google</p>
+        <p class="artigo-fonte">Fonte:Google</p>
 
-<button>❤️ <span>0</span></button>
-<button>👍 <span>0</span></button>
-</div>
-</article>
-<article>
-<img src="img4.jpeg" alt="Ícone quadrado com imagem 
-de estante com livros.">
-<div>
-<h2>A Beleza do Conhecimento</h2>
-<p class="artigo-autor"> Por: Thais</p>
-<p>Beleza abre portas, mas é a inteligência que faz você permanecer. Não cuide apenas do seu reflexo no espelho — invista tempo no que você lê, aprende e pensa. A mente brilhante é o auge do autocuidado!</p>
+        <button class="btn-reacao">❤️ <span>0</span></button>
+        <button class="btn-reacao">👍 <span>0</span></button>
+      </div>
+    </article>
+    <article>
+      <img src="BOOKIMG.jpeg" alt="Ícone quadrado com imagem de estante com livros.">
+      <div>
+        <h2>A Beleza do Conhecimento</h2>
+        <p class="artigo-autor"> Por: Thais</p>
+        <p>Beleza abre portas, mas é a inteligência que faz você permanecer. Não cuide apenas do seu reflexo no espelho — invista tempo no que você lê, aprende e pensa. A mente brilhante é o auge do autocuidado!</p>
 
-<p class="artigo-fonte">Fonte:Google</p>
+        <p class="artigo-fonte">Fonte:Google</p>
 
-<button>❤️ <span>0</span></button>
-<button>👍 <span>0</span></button>
-</div>
-</article>
-<article>
-<img src="img6.jpeg" alt="Ícone quadrado para blog com roupas e estampas.">
-<div>
-<h2>Monitor antigo</h2>
-<p class="artigo-autor"> Por: Thais</p>
-<p>Poá: nunca sai de moda. Toda a elegância e praticidade que você precisa em uma só peça.</p>
+        <button class="btn-reacao">❤️ <span>0</span></button>
+        <button class="btn-reacao">👍 <span>0</span></button>
+      </div>
+    </article>
+    <article>
+      <img src="POAIMG.jpeg" alt="Ícone quadrado para blog com roupas e estampas.">
+      <div>
+        <h2>Entrando na moda</h2>
+        <p class="artigo-autor"> Por: Thais</p>
+        <p>Poá: nunca sai de moda. Toda a elegância e praticidade que você precisa em uma só peça.</p>
 
-<p class="artigo-fonte">Fonte:Google</p>
+        <p class="artigo-fonte">Fonte:Google</p>
 
-<button>❤️ <span>0</span></button>
-<button>👍 <span>0</span></button>
-</div>
-</article>
-<article>
-<img src="img5.jpeg" alt="Ícone quadrado com imagens claras de uma academia.">
-<div>
-<h2>Energia em Movimento</h2>
-<p class="artigo-autor"> Por: Thais</p>
-<p>Mover o corpo é agradecer pelo que ele faz por você todos os dias. Muito mais do que aparência, a atividade física traz saúde, força e bem-estar mental. Inclua esse ritual na sua rotina de beleza e sinta a diferença na pele e na alma!</p>
+        <button class="btn-reacao">❤️ <span>0</span></button>
+        <button class="btn-reacao">👍 <span>0</span></button>
+      </div>
+    </article>
+    <article>
+      <img src="MOVIMG.jpeg" alt="Ícone quadrado com imagens claras de uma academia.">
+      <div>
+        <h2>Energia em Movimento</h2>
+        <p class="artigo-autor"> Por: Thais</p>
+        <p>Mover o corpo é agradecer pelo que ele faz por você todos os dias. Muito mais do que aparência, a atividade física traz saúde, força e bem-estar mental. Inclua esse ritual na sua rotina de beleza e sinta a diferença na pele e na alma!</p>
 
-<p class="artigo-fonte">Fonte:Google</p>
+        <p class="artigo-fonte">Fonte:Google</p>
 
-<button>❤️ <span>0</span></button>
-<button>👍 <span>0</span></button>
-</div>
-</article>
-<article>
-<img src="vec.mey" alt="Ícone quadrado para blog de tecnologia e educação.
-No centro, um livro aberto com circuitos digitais integrados
-e uma lâmpada acesa saindo do meio.
-Dentro da lâmpada, há um capelo de formatura e conexões de rede.
-Fundo em gradiente azul e verde.">
-<div>
-<h2>Camera antiga</h2>
-<p class="artigo-autor"> Por: victor</p>
-<p>As câmeras antigas carregam o charme da fotografia analógica e mecânica, atraindo tanto colecionadores quanto jovens interessados na estética granulada e nas cores únicas dos filmes fotográficos. O universo das câmeras vintage abrange desde modelos centenários até as primeiras digitais dos anos 2000.</p>
+        <button class="btn-reacao">❤️ <span>0</span></button>
+        <button class="btn-reacao">👍 <span>0</span></button>
+      </div>
+    </article>
+    <article>
+      <img src="IMGC.jpeg" alt="Ícone quadrado para blog de tecnologia e educação.">
+      <div>
+        <h2></h2>
+        <p class="artigo-autor"> Por: Thais</p>
+        <p>Muito mais do que apenas registrar uma imagem, fotografar é guardar para sempre a emoção e a beleza de um instante único.</p>
 
-<p class="artigo-fonte">Fonte:Google</p>
+        <p class="artigo-fonte">Fonte:Google</p>
 
-<button>❤️ <span>0</span></button>
-<button>👍 <span>0</span></button>
-</div>
-</article>
-<article>
-<img src="tec.money" alt="Ícone quadrado para blog de tecnologia e educação.
-No centro, um livro aberto com circuitos digitais integrados
-e uma lâmpada acesa saindo do meio.
-Dentro da lâmpada, há um capelo de formatura e conexões de rede.
-Fundo em gradiente azul e verde.">
-<div>
-<h2>placa mãe antiga</h2>
-<p class="artigo-autor"> Por: victor</p>
-<p>As placas-mãe antigas são a espinha dorsal do retrocomputing. Elas carregam a evolução da arquitetura dos computadores e são essenciais para quem deseja reviver a experiência exata de sistemas operacionais como o MS-DOS, Windows 95 ou Windows XP.</p>
+        <button class="btn-reacao">❤️ <span>0</span></button>
+        <button class="btn-reacao">👍 <span>0</span></button>
+      </div>
+    </article>
+    <article>
+      <img src="img10.jpeg" alt="Ícone quadrado para blog com imagem de unha.">
+      <div>
+        <h2></h2>
+        <p class="artigo-autor"> Por: Thais</p>
+        <p>Unhas bem cuidadas e hidratadas são o detalhe perfeito para expressar a sua feminilidade com leveza e elegância.</p>
 
-<p class="artigo-fonte">Fonte:Google</p>
-<button>❤️ <span>0</span></button>
-<button>👍 <span>0</span></button>
-</div>
-</article>
-</main>
+        <p class="artigo-fonte">Fonte:Google</p>
+        <button class="btn-reacao">❤️ <span>0</span></button>
+        <button class="btn-reacao">👍 <span>0</span></button>
+      </div>
+    </article>
+  </main>
+
+
+  <button id="theme-toggle" aria-label="Alternar modo claro e escuro" title="Alternar tema">
+    <span class="theme-icon"></span>
+  </button>
+
+  <script>
+    const botoes = document.querySelectorAll(".btn-reacao");
+
+    botoes.forEach(function (botao) {
+      let curtiu = false;
+      botao.addEventListener("click", function () {
+        let texto = botao.querySelector("span");
+        if (curtiu === false) {
+          texto.textContent++;
+          curtiu = true;
+        } else {
+          texto.textContent--;
+          curtiu = false;
+        }
+      });
+    });
+
+    const themeToggleBtn = document.getElementById("theme-toggle");
+    const body = document.body;
+
+    if (localStorage.getItem("tema") === "dark") {
+      body.classList.add("dark-mode");
+    }
+
+    themeToggleBtn.addEventListener("click", function () {
+      body.classList.toggle("dark-mode");
+
+      if (body.classList.contains("dark-mode")) {
+        localStorage.setItem("tema", "dark");
+      } else {
+        localStorage.setItem("tema", "light");
+      }
+    });
+  </script>
 </body>
-<script>
-const botoes = document.querySelectorAll("button");
-
-botoes.forEach(function (botao) {
-let curtiu = false;
-botao.addEventListener("click", botaoclicado);
-function botaoclicado() {
-console.log("fui clicado");
-let texto = botao.querySelector("span");
-if (curtiu === false){
-texto.textContent++;
-curtiu = true;
-}else{
-texto.textContent--;
-curtiu = false;
-}
-}
-})
-
-</script>
 
 </html>
